@@ -27,9 +27,6 @@ func ValidateManga(v *validator.Validator, manga *Manga) {
 	v.Check(manga.Year != 0, "year", "must be provided")
 	v.Check(manga.Year >= 1888, "year", "must be greater than 1888")
 	v.Check(manga.Year <= int32(time.Now().Year()), "year", "must not be in the future")
-
-	v.Check(manga.Version > 0, "pages", "must be a positive integer")
-
 }
 
 type MangaModel struct{

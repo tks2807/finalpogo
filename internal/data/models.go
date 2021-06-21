@@ -12,9 +12,12 @@ var(
 
 type Models struct{
 	Manga MangaModel
+	Users UserModel
 }
 
 func NewModels(db*sql.DB)Models{
-	return Models{Manga:MangaModel{DB:db},
-		}
+	return Models{
+		Manga:MangaModel{DB:db},
+		Users: UserModel{DB: db},
+	}
 }
